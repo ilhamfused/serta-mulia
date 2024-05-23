@@ -1,10 +1,9 @@
 const { Firestore } = require("@google-cloud/firestore");
 
 async function storeData(id, data) {
-  const db = new Firestore({ projectId: "ilham-serta-mulia" });
+  const db = new Firestore();
 
-  const predictCollection = db.collection("prediction");
-  // console.log("sampai sini");
+  const predictCollection = db.collection("predictions");
   return predictCollection.doc(id).set(data);
 }
 
